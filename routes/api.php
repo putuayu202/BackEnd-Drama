@@ -14,4 +14,6 @@ $api->version('v1', function($api){
     $api->get('/quiz3', 'App\Http\Controllers\quizController@showquiz3');
     $api->get('/quiz4', 'App\Http\Controllers\quizController@showquiz4');
     $api->get('/exam', 'App\Http\Controllers\quizController@exam');
+    $api->get('/exam2', 'App\Http\Controllers\quizController@exam2');
+    $api->get('/exam3', 'App\Http\Controllers\quizController@exam3');
 });

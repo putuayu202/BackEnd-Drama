@@ -45,4 +45,16 @@ class quizController extends Controller
         $quiz = Quiz::where('category', '=', 'ujian')->get();
         return $quiz->toArray();
     }
+
+    public function exam2()
+    {
+        $quiz = Quiz::where('category', '=', 'ujian2')->get();
+        return $quiz->toArray();
+    }
+
+    public function exam3()
+    {
+        $quiz = Quiz::where('category', '=', 'ujian3')->get();
+        return $quiz->toArray();
+    }
 }
