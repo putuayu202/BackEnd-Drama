@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Quiz extends Model
 {
     protected $fillable = [
-        'category', 'question','correct_answer','pembahasan','incorrect_answers',
+        'category', 'quiz',
     ];
 
     protected $casts = [
-        'incorrect_answers' => 'array'
+        'quiz' => 'array'
     ];
 
     protected $table = 'quiz';

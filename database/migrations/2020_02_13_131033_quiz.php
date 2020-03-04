@@ -16,10 +16,7 @@ class Quiz extends Migration
         Schema::create('quiz', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('category');
-            $table->text('question');
-            $table->text('pembahasan');
-            $table->text('correct_answer');
-            $table->json('incorrect_answers');
+            $table->json('quiz');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -11,10 +11,7 @@ class quizController extends Controller
     {
         $quiz = Quiz::create([
             'category'    => $request->category,
-            'question'    => $request->question,
-            'correct_answer'    => $request->correct_answer,
-            'incorrect_answers'    => $request->incorrect_answers,
-            'pembahasan'    => $request->pembahasan,
+            'quiz'  => $request->quiz,
         ]);
         return $quiz;
     }
