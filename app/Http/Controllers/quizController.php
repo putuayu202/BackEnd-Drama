@@ -16,42 +16,14 @@ class quizController extends Controller
         return $quiz;
     }
 
-    public function showquiz1()
+    public function showquiz1($category)
     {
-        $quiz = Quiz::where('category', '=', 'modul1')->get();
-        return $quiz->toArray();
-    }
-
-    public function showquiz2()
-    {
-        $quiz = Quiz::where('category', '=', 'modul2')->get();
-        return $quiz->toArray();
-    }
-    public function showquiz3()
-    {
-        $quiz = Quiz::where('category', '=', 'modul3')->get();
-        return $quiz->toArray();
-    }
-    public function showquiz4()
-    {
-        $quiz = Quiz::where('category', '=', 'modul4')->get();
-        return $quiz->toArray();
-    }
-    public function exam()
-    {
-        $quiz = Quiz::where('category', '=', 'ujian')->get();
-        return $quiz->toArray();
-    }
-
-    public function exam2()
-    {
-        $quiz = Quiz::where('category', '=', 'ujian2')->get();
-        return $quiz->toArray();
-    }
-
-    public function exam3()
-    {
-        $quiz = Quiz::where('category', '=', 'ujian3')->get();
-        return $quiz->toArray();
+        try {
+            $soal = Quiz::where('category',$category)->firstOrFail();
+            return Quiz::where('category',$category)->get()->toArray();
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            $soal = json_encode(['error' => 'Tidak Ada Hasil']);
+            return $soal;
+        }
     }
 }
