@@ -12,6 +12,7 @@ class quizController extends Controller
         $quiz = Quiz::create([
             'category'    => $request->category,
             'quiz'  => $request->quiz,
+            'pembahasan' => $request->pembahasan
         ]);
         return $quiz;
     }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Quiz extends Model
 {
     protected $fillable = [
-        'category', 'quiz',
+        'category', 'quiz', 'pembahasan',
     ];
 
     protected $casts = [
