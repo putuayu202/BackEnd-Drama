@@ -12,4 +12,7 @@ $api->version('v1', function($api){
 
     $api->post('/createquiz', 'App\Http\Controllers\quizController@createquiz');
     $api->get('/quiz/{category}', 'App\Http\Controllers\quizController@showquiz1');
+
+    $api->post('/createquiz2', 'App\Http\Controllers\Quiz2Controller@createquiz2');
+    $api->get('/quiz2/{category}', 'App\Http\Controllers\Quiz2Controller@quiz2');
 });
