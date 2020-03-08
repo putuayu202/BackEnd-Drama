@@ -12,13 +12,14 @@ class Quiz2Controller extends Controller
         $soal = Quiz2::create([
             'category'    => $request->category,
             'question'    => $request->question,
+            'pembahasan'    => $request->pembahasan,
             'correct_answer'    => $request->correct_answer,
             'incorrect_answers'    => $request->incorrect_answers,
         ]);
         return $soal;
     }
 
-    public function quiz2($token){
+    public function quiz2($category){
         try {
             $soal = Quiz2::where('category',$category)->firstOrFail();
             return Quiz2::where('category',$category)->get()->toArray();
